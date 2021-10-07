@@ -1,0 +1,40 @@
+package com.javarush.task.pro.task06.task0606;
+
+/* 
+Универсальный солдат
+*/
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+class Solution
+{
+
+    public static void main(String[] args) {
+        parametersArray();
+    }
+
+
+    public static void parametersArray () {
+        int[][] data;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите число: ");
+        int n = scan.nextInt();
+        System.out.println("Ведите второве число: ");
+        int a = scan.nextInt();
+        data = new int[n][a];
+        initialArray(data);
+    }
+
+    public static void initialArray(int[][] data) {
+        Scanner scan = new Scanner(System.in);
+        for (int i = 0; i < data.length; i++) {
+            for (int j = 0; j < data[i].length; j++) {
+                System.out.println("Наполянем массив: ");
+                data[i][j] = scan.nextInt();
+            }
+        }
+        String str = Arrays.deepToString(data);
+        System.out.println(str);
+    }
+}
